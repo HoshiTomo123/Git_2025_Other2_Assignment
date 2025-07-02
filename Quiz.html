@@ -2,9 +2,9 @@
 <html lang="ja">
 	<head>
 	    <meta charset="UTF-8">
-	    <title>Quiz</title>
+	    <title>ソフトウェア開発モデルクイズ</title>
 		<style>
-		body{
+		  body{
 			font-family: sans-serif;
             padding: 20px;
 		}
@@ -14,11 +14,11 @@
          .options {
             margin-bottom: 20px;
 	     }
-	</style>
+	    </style>
 	</head>
 	
 	<body>
-		<script src="Quiz.js"></script>
+		
 		<div class="question">
     <strong>
       システム開発の早い段階で、目に見える形で利用者の要求が確認できるように確認用のソフトウェアを作成する<br>
@@ -26,7 +26,7 @@
     </strong>
   </div>
 
-  <form>
+  <form id="quiz-form">
     <div class="options">
       <label><input type="radio" name="model"> アジャイル</label><br>
       <label><input type="radio" name="model"> ウォーターフォール</label><br>
@@ -36,5 +36,30 @@
     <button type="button">解答する</button>
   </form>
 
+   <div id="result"></div>
+
+   <script>
+    function checkAnswer() {
+      const form = document.getElementById("quiz-form");
+      const selected = form.model.value;
+      const result = document.getElementById("result");
+
+      if (!selected) {
+        result.textContent = "選択肢を選んでください。";
+        result.style.color = "red";
+        return;
+      }
+
+      if (selected === "プロトタイピング") {
+        result.textContent = "正解です！🎉";
+        result.style.color = "green";
+      } else {
+        result.textContent = "不正解です。正解は「プロトタイピング」です。";
+        result.style.color = "red";
+      }
+    }
+  </script>
+
+   <script src="Quiz.js"></script>
 	</body>
 </html>
