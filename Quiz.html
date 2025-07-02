@@ -3,8 +3,38 @@
 	<head>
 	    <meta charset="UTF-8">
 	    <title>Quiz</title>
+		<style>
+		body{
+			font-family: sans-serif;
+            padding: 20px;
+		}
+		.question {
+            margin-bottom: 10px;
+         }
+         .options {
+            margin-bottom: 20px;
+	     }
+	</style>
 	</head>
+	
 	<body>
 		<script src="Quiz.js"></script>
+		<div class="question">
+    <strong>
+      システム開発の早い段階で、目に見える形で利用者の要求が確認できるように確認用のソフトウェアを作成する<br>
+      ソフトウェア開発モデルとして、最も適切なものはどれか。
+    </strong>
+  </div>
+
+  <form>
+    <div class="options">
+      <label><input type="radio" name="model"> アジャイル</label><br>
+      <label><input type="radio" name="model"> ウォーターフォール</label><br>
+      <label><input type="radio" name="model"> スパイラル</label><br>
+      <label><input type="radio" name="model" checked> プロトタイピング</label>
+    </div>
+    <button type="button">解答する</button>
+  </form>
+
 	</body>
 </html>
